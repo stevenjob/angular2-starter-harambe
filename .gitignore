@@ -1,0 +1,23 @@
+# Logs
+logs
+*.log
+
+# Node Files
+/node_modules
+/node_modules/@types
+
+# Coverage
+/coverage/
+
+# Typing
+/src/typings/tsd/
+/typings/
+/tsd_typings/
+
+# Dist
+/dist
+.webpack.json
+
+# IDE #
+.idea/
+*.swp
