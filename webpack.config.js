@@ -10,11 +10,11 @@ var ForkCheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 var config = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
+    'vendors': './src/vendors.ts',
     'app': './src/main.ts'
   },
   output: {
-    path: root('dist'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/',
     filename: 'js/[name].js',
     chunkFilename: '[id].chunk.js'
@@ -57,7 +57,9 @@ var config = {
   },
   plugins: [
     new CommonsChunkPlugin({
-      name: ['vendor', 'polyfills']
+      name: ['vendors', 'polyfills']
     })
   ]
 };
+
+module.exports = config;
