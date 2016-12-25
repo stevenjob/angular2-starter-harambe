@@ -3,6 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var ContextReplacementPlugin = webpack.ContextReplacementPlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ForkCheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
@@ -58,7 +59,13 @@ var config = {
   plugins: [
     new CommonsChunkPlugin({
       name: ['vendors', 'polyfills']
-    })
+    }),
+    // https://github.com/angular/angular/issues/11580
+    new ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      path.join(__dirname, 'src'),
+      {} // a map of your routes 
+    ),
   ]
 };
 
