@@ -2,7 +2,7 @@
   "name": "angular2-starter-harambe",
   "version": "0.0.1",
   "scripts": {
-    "start": "webpack",
+    "start": "node webpack.dev.server.js",
     "lint": "tslint --force \"src/**/*.ts\"",
     "lint:fix": "tslint --force --fix \"src/**/*.ts\""
   },

@@ -8,6 +8,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ForkCheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
+var METADATA = {
+  title: 'Angular 2 Harambe',
+  baseUrl: '/'
+};
+
 var config = {
   entry: {
     'polyfills': './src/polyfills.ts',
@@ -66,6 +71,12 @@ var config = {
       path.join(__dirname, 'src'),
       {} // a map of your routes 
     ),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      title: METADATA.title,
+      chunksSortMode: 'dependency',
+      metadata: METADATA
+    }),
   ]
 };
 
