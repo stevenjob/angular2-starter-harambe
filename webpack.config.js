@@ -77,6 +77,9 @@ var config = {
       chunksSortMode: 'dependency',
       metadata: METADATA
     }),
+    new ExtractTextPlugin({
+      filename: 'css/[name].[hash].css'
+    })
   ]
 };
 

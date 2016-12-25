@@ -1,2 +1,22 @@
-<div>harambe</div>
+<nav class="nav">
+  <span>
+    <a
+      class="nav-item-link"
+      [routerLink]="['./']"
+      [routerLinkActive]="['nav-item-link-active']"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </a>
+  </span>
+  <span>
+    <a
+      class="nav-item-link"
+      [routerLink]="['./about']"
+      [routerLinkActive]="['nav-item-link-active']"
+    >
+      About
+    </a>
+  </span>
+</nav>
 <router-outlet></router-outlet>
